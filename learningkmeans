@@ -1,0 +1,18 @@
+#realizada em python no google collab#
+
+import numpy as np
+import pandas as pd
+
+from sklearn.cluster import KMeans
+from sklearn.datasets import load_wine
+
+wine = load_wine()
+(wine.data)
+
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(wine.data)
+kmeans.labels_
+
+teste = np.random.sample(13)
+print("Valor a ser classificado: \n", teste)
+kmeans.predict(teste.reshape(1,13))
